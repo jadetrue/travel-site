@@ -18,6 +18,15 @@
         }
     }
 
+    &--no-padding-until-large{
+        padding-left: 0;
+        padding-right: 0;
+
+        @mixin atLarge {
+            padding: 0 18px 0 18px;
+        }
+    }
+
     .wrapper {
         padding-left: 0;
         padding-right: 0;
