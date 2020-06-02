@@ -3,6 +3,7 @@ import throttle from 'lodash/throttle';
 class StickyHeader {
     constructor() {
         this.siteHeader = document.querySelector(".site-header");
+        this.pageSections = document.querySelectorAll(".page-section");
         this.events();
     }
 
@@ -16,7 +17,17 @@ class StickyHeader {
         } else {
             this.siteHeader.classList.remove("site-header--dark");
         }
+
+        this.pageSections.forEach(el => this.calcSection(el));
+
     }
+
+    calcSection(el) {
+        if (window.scrollY + window.innerHeight > el.offsetTop && window.scrollY < el.offsetTop + el.offsetHeight) {
+            let scrollPercent = el.getBoundingClientRect().y / window.innerHeight * 100;
+        }
+    }
+
 }
 
 export default StickyHeader;
