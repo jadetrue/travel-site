@@ -16,3 +16,5 @@
 @import 'modules/_site-header.pcss';
 @import 'modules/_primary-nav.pcss';
 @import 'modules/_reveal-item.pcss';
+@import 'modules/_modal.pcss';
+@import 'modules/_social-icons.pcss';
