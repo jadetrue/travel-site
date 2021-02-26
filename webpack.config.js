@@ -66,13 +66,13 @@ if (currentTask == 'dev') {
     cssConfig.use.unshift('style-loader')
     config.output = {
         filename: 'bundled.js',
-        path: path.resolve(__dirname, 'app'),
+        path: path.resolve(__dirname, 'docs'),
     }
     config.devServer = {
         before: function(app, server) {
             server._watch('./docs/**/*.html')
         },
-        contentBase: path.join(__dirname, 'app'),
+        contentBase: path.join(__dirname, 'docs'),
             hot: true,
         port: 3000,
         host: '0.0.0.0',
