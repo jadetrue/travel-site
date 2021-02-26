@@ -17,7 +17,7 @@ const postCSSPlugins = [
 class RunAfterCompile {
     apply(compiler) {
         compiler.hooks.done.tap('Copy images', function() {
-            fse.copySync('./app/assets/images', './docs/assets/images')
+            fse.copySync('./docs/assets/images', './docs/assets/images')
         })
     }
 }
@@ -30,17 +30,17 @@ let cssConfig = {
     }],
 }
 
-let pages = fse.readdirSync('./app').filter(function(file) {
+let pages = fse.readdirSync('./docs').filter(function(file) {
     return file.endsWith('.html');
 }).map(function(page) {
     return new HtmlWebpackPlugin({
         filename: page,
-        template: `./app/${page}`,
+        template: `./docs/${page}`,
     })
 })
 
 let config = {
-    entry: './app/assets/scripts/App.js',
+    entry: './docs/assets/scripts/App.js',
     plugins: pages,
     module: {
         rules: [
@@ -70,7 +70,7 @@ if (currentTask == 'dev') {
     }
     config.devServer = {
         before: function(app, server) {
-            server._watch('./app/**/*.html')
+            server._watch('./docs/**/*.html')
         },
         contentBase: path.join(__dirname, 'app'),
             hot: true,
