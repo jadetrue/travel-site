@@ -90,7 +90,7 @@ if (currentTask == 'build') {
     }
     config.mode = 'production'
     config.optimization = {
-        splitChunks: {chunks: 'all'}
+        splitChunks: {chunks: 'all', minSize: 1000}
     }
     config.plugins.push(
         new CleanWebpackPlugin(),
