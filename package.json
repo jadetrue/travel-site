@@ -27,6 +27,7 @@
     "fs-extra": "^9.0.1",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.2.1",
+    "postcss": "^8.2.15",
     "postcss-hexrgba": "^2.0.1",
     "postcss-import": "^13.0.0",
     "postcss-loader": "^4.0.4",
