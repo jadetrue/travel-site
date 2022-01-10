@@ -4,10 +4,9 @@
 
 ## 🧰 Built with
 
--
--
--
--
+- HTML
+- PostCSS
+- JavaScript
 
 ## ✨ What I learned
 
